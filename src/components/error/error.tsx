@@ -7,7 +7,7 @@ const Error = ({error}: ErrorProps) => {
     return (
         <Stack flex="auto" justifyContent="center" alignItems="center" marginY={1}>
             <Typography variant="overline" fontSize="1.5rem" fontWeight="medium" align="center" color="error">
-                {error}
+                {error.message}
             </Typography>
         </Stack>
     );
