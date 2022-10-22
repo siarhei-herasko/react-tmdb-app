@@ -13,7 +13,7 @@ export const getTVList = (filter: Filter) => new Promise<TVList>((res, rej) => {
                     title: i.name || i.original_name,
                     poster: i.poster_path ? `https://image.tmdb.org/t/p/w500${i.poster_path}` : null
                 })) || [],
-                total: data.total_pages || 0
+                total: data.total_pages ? data.total_pages <= 500 ? data.total_pages : 500 : 0
             });
         })
         .catch(error => rej(error));
